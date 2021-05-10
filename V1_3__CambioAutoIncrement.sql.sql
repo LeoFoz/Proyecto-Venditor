@@ -21,7 +21,7 @@ USE `MIBD-PROYECTO` ;
 -- Table `MIBD-PROYECTO`.`Users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Users` (
-  `UserId` BIGINT NOT NULL,
+  `UserId` BIGINT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) NULL DEFAULT NULL,
   `Password` VARBINARY(300) NULL DEFAULT NULL,
   `PictureUrl` VARCHAR(150) NULL DEFAULT NULL,
@@ -36,7 +36,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Biddings`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Biddings` (
-  `BiddingId` BIGINT NOT NULL,
+  `BiddingId` BIGINT NOT NULL AUTO_INCREMENT,
   `MinimalPrice` DECIMAL(9,2) NULL DEFAULT NULL,
   `ComissonXSale` DECIMAL(5,2) NULL DEFAULT NULL,
   `posttime` DATETIME NULL DEFAULT NULL,
@@ -56,7 +56,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Interests`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Interests` (
-  `InterestId` BIGINT NOT NULL,
+  `InterestId` BIGINT NOT NULL AUTO_INCREMENT,
   `Posttime` DATETIME NULL DEFAULT NULL,
   `Agree` TINYINT(1) NULL DEFAULT NULL,
   `ChangeDeal` TINYINT(1) NULL DEFAULT NULL,
@@ -81,7 +81,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Comissions`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Comissions` (
-  `ComissionId` BIGINT NOT NULL,
+  `ComissionId` BIGINT NOT NULL AUTO_INCREMENT,
   `Amount` DECIMAL(5,2) NULL DEFAULT NULL,
   `Comission` DECIMAL(9,2) NULL DEFAULT NULL,
   PRIMARY KEY (`ComissionId`))
@@ -93,7 +93,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`PaymentStatus`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`PaymentStatus` (
-  `PaymentStatusId` INT NOT NULL,
+  `PaymentStatusId` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`PaymentStatusId`))
 ENGINE = InnoDB
@@ -104,7 +104,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`SINPES`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`SINPES` (
-  `SinpeId` BIGINT NOT NULL,
+  `SinpeId` BIGINT NOT NULL AUTO_INCREMENT,
   `CuentaIBAN` VARBINARY(22) NULL DEFAULT NULL,
   `CheckSum` VARBINARY(300) NULL DEFAULT NULL,
   `Token` VARBINARY(70) NULL DEFAULT NULL,
@@ -123,7 +123,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`PaymenttAttempts`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`PaymenttAttempts` (
-  `PaymentAttemptId` BIGINT NOT NULL,
+  `PaymentAttemptId` BIGINT NOT NULL AUTO_INCREMENT,
   `Amount` DECIMAL(20,2) NULL DEFAULT NULL,
   `CurrencySymbol` VARCHAR(6) NULL DEFAULT NULL,
   `Posttime` DATE NULL DEFAULT NULL,
@@ -169,7 +169,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`AdjudicateStates`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`AdjudicateStates` (
-  `AdjudicateStateId` BIGINT NOT NULL,
+  `AdjudicateStateId` BIGINT NOT NULL AUTO_INCREMENT,
   `InterestId` BIGINT NOT NULL,
   `PaymentAttemptId` BIGINT NOT NULL,
   PRIMARY KEY (`AdjudicateStateId`),
@@ -189,7 +189,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`AppSources`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`AppSources` (
-  `AppSourceId` INT NOT NULL,
+  `AppSourceId` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Description` VARBINARY(300) NULL DEFAULT NULL,
   PRIMARY KEY (`AppSourceId`))
@@ -201,7 +201,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`ProductCategory`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`ProductCategory` (
-  `ProductCategoryId` BIGINT NOT NULL,
+  `ProductCategoryId` BIGINT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(120) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   PRIMARY KEY (`ProductCategoryId`))
 ENGINE = InnoDB
@@ -212,7 +212,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Products`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Products` (
-  `Productid` BIGINT NOT NULL,
+  `Productid` BIGINT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Description` VARBINARY(300) NULL DEFAULT NULL,
   `PriceSale` DECIMAL(9,2) NULL DEFAULT NULL,
@@ -231,7 +231,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`BlockedProducts`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`BlockedProducts` (
-  `BlockedProductsId` BIGINT NOT NULL,
+  `BlockedProductsId` BIGINT NOT NULL AUTO_INCREMENT,
   `Enabled` BIT(1) NULL DEFAULT NULL,
   `UserId` BIGINT NOT NULL,
   `Productid` BIGINT NOT NULL,
@@ -252,7 +252,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`BlockedSalers`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`BlockedSalers` (
-  `BlockedSalerId` BIGINT NOT NULL,
+  `BlockedSalerId` BIGINT NOT NULL AUTO_INCREMENT,
   `BloquedUserRef` BIGINT NULL DEFAULT NULL,
   `BlockedTime` DATE NULL DEFAULT NULL,
   `Enabled` BIT(1) NULL DEFAULT NULL,
@@ -270,7 +270,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Characteristics`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Characteristics` (
-  `CharacteristicId` BIGINT NOT NULL,
+  `CharacteristicId` BIGINT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(120) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `DescriptionHTML` VARCHAR(128) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `DataType` VARCHAR(5) NULL DEFAULT NULL,
@@ -283,7 +283,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`CharacterisXCategory`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`CharacterisXCategory` (
-  `CharacteristxCategoryId` BIGINT NOT NULL,
+  `CharacteristxCategoryId` BIGINT NOT NULL AUTO_INCREMENT,
   `CharacteristicId` BIGINT NOT NULL,
   `ProductCategoryId` BIGINT NOT NULL,
   `Value` VARCHAR(128) NULL,
@@ -304,7 +304,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`CharacterisXProduct`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`CharacterisXProduct` (
-  `CharacterisXProductId` BIGINT NOT NULL,
+  `CharacterisXProductId` BIGINT NOT NULL AUTO_INCREMENT,
   `Value` VARCHAR(128) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Productid` BIGINT NOT NULL,
   `CharacteristicId` BIGINT NOT NULL,
@@ -325,7 +325,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`EntityTypes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`EntityTypes` (
-  `EntityTpyeId` BIGINT NOT NULL,
+  `EntityTpyeId` BIGINT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Description` VARBINARY(300) NULL DEFAULT NULL,
   PRIMARY KEY (`EntityTpyeId`))
@@ -337,7 +337,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`InterestedProducts`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`InterestedProducts` (
-  `RecommededId` BIGINT NOT NULL,
+  `RecommededId` BIGINT NOT NULL AUTO_INCREMENT,
   `UserId` BIGINT NOT NULL,
   `ProductCategoryId` BIGINT NOT NULL,
   `Deleted` BIT NULL,
@@ -358,7 +358,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`LogTypes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`LogTypes` (
-  `LogTypeId` INT NOT NULL,
+  `LogTypeId` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Description` VARBINARY(300) NULL DEFAULT NULL,
   PRIMARY KEY (`LogTypeId`))
@@ -370,7 +370,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Severities`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Severities` (
-  `SevirityId` INT NOT NULL,
+  `SevirityId` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Description` VARBINARY(300) NULL DEFAULT NULL,
   PRIMARY KEY (`SevirityId`))
@@ -382,7 +382,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Logs`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Logs` (
-  `LogId` BIGINT NOT NULL,
+  `LogId` BIGINT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Postime` DATETIME NULL DEFAULT NULL,
   `Description` VARCHAR(300) NULL DEFAULT NULL,
@@ -423,7 +423,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Pictures`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Pictures` (
-  `picutreId` INT NOT NULL,
+  `picutreId` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(50) CHARACTER SET 'utf8' NULL DEFAULT NULL,
   `Description` VARBINARY(300) NULL DEFAULT NULL,
   `Productid` BIGINT NOT NULL,
@@ -441,7 +441,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`ProductsByBid`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`ProductsByBid` (
-  `ProductsByBidId` BIGINT NOT NULL,
+  `ProductsByBidId` BIGINT NOT NULL AUTO_INCREMENT,
   `Quantity` INT NULL DEFAULT NULL,
   `BiddingId` BIGINT NOT NULL,
   `Productid` BIGINT NOT NULL,
@@ -462,7 +462,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`Transactions`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`Transactions` (
-  `TransactionId` BIGINT NOT NULL,
+  `TransactionId` BIGINT NOT NULL AUTO_INCREMENT,
   `posttime` DATETIME NULL DEFAULT NULL,
   `PaymentAttemptId` BIGINT NOT NULL,
   PRIMARY KEY (`TransactionId`),
@@ -478,7 +478,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `MIBD-PROYECTO`.`UserSalesxCategory`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`UserSalesxCategory` (
-  `UserSalesxcategoryId` BIGINT NOT NULL,
+  `UserSalesxcategoryId` BIGINT NOT NULL AUTO_INCREMENT,
   `SoldProductsAmountXCategory` BIGINT NULL DEFAULT NULL,
   `UserId` BIGINT NOT NULL,
   `ProductCategoryId` BIGINT NOT NULL,
