@@ -4,6 +4,7 @@
 --  Descripcion Llenado de datos 
 -- ______________________________
 
+
 --  Llenamos Users
 INSERT INTO Users ( `Name`, `Password`, PictureUrl, BirthDay, mail)
 VALUES ( "Leo", "123", "https://redfibra.mx/wp-content/uploads/DOMINIO-1.jpg", 
@@ -35,6 +36,15 @@ NOW(), "Lauramail@gmail.com");
 INSERT INTO Users ( `Name`, `Password`, PictureUrl, BirthDay, mail)
 VALUES ( "Viviana", "123", "https://redfibra.mx/wp-content/uploads/DOMINIO-1.jpg", 
 NOW(), "Vivianamail@gmail.com");
+
+-- Usuario que se utilizara por la empresa
+INSERT INTO Users ( UserId,`Name`, `Password`, PictureUrl, BirthDay, mail)
+VALUES ( 100, "Venditor", "123", "https://redfibra.mx/wp-content/uploads/DOMINIO-1.jpg", 
+NOW(), "Venditor@gmail.com");
+INSERT INTO SINPES (SinpeId,CuentaIBAN, `CheckSum`,Token,`Enable`,UserId)
+VALUES ( 100,"CR12S11111111111111111",md5(CuentaIBAN),
+"1111111111111111111111111111111111111111111111111111111111111111111111",1,100);
+
 
 -- Llenamos SINPES
 INSERT INTO SINPES ( CuentaIBAN, `CheckSum`,Token,`Enable`,UserId)
@@ -210,5 +220,13 @@ Año:
 -- llenado comission
 INSERT INTO Comissions (Amount,Comission)
 VALUES (1,1);
+
+-- llenado biddings 
+INSERT INTO Biddings (`BiddingId` , `MinimalPrice` , `ComissonXSale` , `posttime`, `Description` , `State` , `UserId`)
+VALUES (1,10,2,DATE(NOW()), 'Manzana roja',1,1);
+   
+-- llenado interest
+INSERT INTO Interests (`InterestId` , `Posttime` , `Agree` , `ChangeDeal` , `NewComission` , `LastPrice` , `UserId` , `BiddingId` )
+VALUES (1,DATE(NOW()),1,0,2,10,2,1);
 
 

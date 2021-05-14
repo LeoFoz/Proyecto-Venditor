@@ -10,7 +10,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema MIBD-PROYECTO
 -- -----------------------------------------------------
-
+-- Para la conexion con las apis
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root';
+flush privileges;
 -- -----------------------------------------------------
 -- Schema MIBD-PROYECTO
 -- -----------------------------------------------------
@@ -131,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `MIBD-PROYECTO`.`PaymenttAttempts` (
   `ErrorNumber` INT NULL DEFAULT NULL,
   `MerchantTransNumber` INT NULL DEFAULT NULL,
   `Description` VARCHAR(300) NULL DEFAULT NULL,
-  `PaymentTimeStamp` DATETIME NULL DEFAULT NULL,
+  `PaymentTimeStamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   `IpAdress` VARCHAR(100) NULL DEFAULT NULL,
   `CheckSum` VARBINARY(300) NULL DEFAULT NULL,
   `Sinpeout` BIGINT NULL DEFAULT NULL,
