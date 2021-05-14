@@ -10,7 +10,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema MIBD-PROYECTO
 -- -----------------------------------------------------
-
+-- Para la conexion con las apis
+ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root';
+flush privileges;
 -- -----------------------------------------------------
 -- Schema MIBD-PROYECTO
 -- -----------------------------------------------------
