@@ -18,9 +18,9 @@ create procedure InsertIntoAdjudicated(
 BEGIN	
 	DECLARE EXIT HANDLER FOR SQLEXCEPTION    
     begin
-    GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
-    SET @message = CONCAT('Internal error: ');  
-    select @message;
+     GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
+     SET @message = CONCAT('Internal error: ',@message);  
+    -- select @message;
     if(@InicieYo  = 1) then
 		rollback;
 	end if;   
@@ -77,13 +77,13 @@ create procedure  setStates(
 
 )
 BEGIN	
-	DECLARE EXIT HANDLER FOR SQLEXCEPTION    
+	 DECLARE EXIT HANDLER FOR SQLEXCEPTION    
     begin
-    GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
-    SET @message = CONCAT('Internal error: ');  
-    select @message;
-    if(@InicieYo = 1) then
-		rollback;
+     GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
+      SET @message = CONCAT('Internal error: ',@message);  
+    -- select @message;
+     if(@InicieYo = 1) then
+	 	rollback;
 	end if;   
     end;
     set @InicieYo = false;
@@ -123,11 +123,11 @@ create procedure  setAdjudicated(
     
 )
 BEGIN	
-	DECLARE EXIT HANDLER FOR SQLEXCEPTION    
+	 DECLARE EXIT HANDLER FOR SQLEXCEPTION    
     begin
-    GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
-    SET @message = CONCAT('Internal error: ');    
-    select @message;
+     GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
+     SET @message = CONCAT('Internal error: ',@message);    
+    -- select @message;
     if(@InicieYo = 1) then
 		rollback;
 	end if;   
@@ -160,4 +160,5 @@ BEGIN
 	-- definir handler
 
 end //
+-- call InsertIntoAdjudicated(false,1,'$$');
 -- call InsertIntoAdjudicated(false,1,'$$');
