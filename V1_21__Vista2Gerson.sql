@@ -4,7 +4,7 @@
 
 -- Vista 2 vista_bidings/interests 
 
-alter view vista_bidings as 
+create view vista_bidings as 
 select
 bid.`BiddingId`,
 bid.`MinimalPrice` as Precio_Minimo,

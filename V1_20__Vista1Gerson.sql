@@ -4,7 +4,7 @@
 
 -- Vista 1 Vista_Products
 
-alter view vista_products as
+create view vista_products as
 select 
 pr.`Productid`, 
 pr.`Name` as Nombre_Producto, 
@@ -21,7 +21,7 @@ c.`DescriptionHTML` as DescripcionHTML
 
 from `Products` as pr 
 
-inner join `productcategory` as pc on (pr.`ProductCategoryId`=pc.`ProductCategoryId`)
+inner join `ProductCategory` as pc on (pr.`ProductCategoryId`=pc.`ProductCategoryId`)
 inner join  Pictures as pi on (pi.`Productid` = pr.`Productid`)
 inner join CharacterisXProduct as cp on  (cp.`Productid`= pr.Productid)
 left join BlockedProducts as bp on (bp.Productid = pr.Productid)

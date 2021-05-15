@@ -4,7 +4,7 @@
 
 -- Vista para Adjudicatedstate // PaymenttAttempts
 
-alter view Adjudicatedstate as
+create view Adjudicatedstate as
 select
 AdjState.AdjudicateStateId as Adjudicated_ID,
 PayAtt.Amount as Cantidad,
