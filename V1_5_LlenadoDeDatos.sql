@@ -229,4 +229,13 @@ VALUES (1,10,2,DATE(NOW()), 'Manzana roja',1,1);
 INSERT INTO Interests (`InterestId` , `Posttime` , `Agree` , `ChangeDeal` , `NewComission` , `LastPrice` , `UserId` , `BiddingId` )
 VALUES (1,DATE(NOW()),1,0,2,10,2,1);
 
+-- llenado BlockedSalers
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (2,DATE(NOW()),1,1);
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (3,DATE(NOW()),1,1);
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (4,DATE(NOW()),1,1);
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (5,DATE(NOW()),1,1);
 
