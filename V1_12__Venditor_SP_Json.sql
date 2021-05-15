@@ -1,7 +1,7 @@
 -- ______________________________
 -- Autor: Leonardo Fariña
 -- Fecha: 11/05/2021
--- Descripcion: Generamos un SP que retorna un Json con todos los datos de un usuario
+-- Descripcion: Generamos un SP que retorna un Json con datos de un usuario, los usuarios que tiene bloqueado y los productos bloqueados
 -- pUserId sera el id que usemos para encontrar al usuario
 -- ______________________________
 DROP PROCEDURE IF EXISTS Venditor_SP_Json;
