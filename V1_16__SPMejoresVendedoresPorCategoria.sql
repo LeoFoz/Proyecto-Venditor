@@ -3,6 +3,7 @@
 -- Fecha: 9/05/2021
 -- Descripcion: SP los mejores vendedores dado una categoría
 -- ______________________________
+drop procedure if exists verMejoresVendedores;
 delimiter //
 create procedure verMejoresVendedores(
 	pCategory varchar(60),

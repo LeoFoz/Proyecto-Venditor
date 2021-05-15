@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS BlockedSalerInverso (
   PRIMARY KEY (`BlockedSalerId`)
 );
 
-DROP  TRIGGER Venditor_TG_BloqueoDeUsuario;
+DROP  TRIGGER if exists Venditor_TG_BloqueoDeUsuario;
 DELIMITER //
 CREATE TRIGGER Venditor_TG_BloqueoDeUsuario BEFORE INSERT ON BlockedSalers
   FOR EACH ROW

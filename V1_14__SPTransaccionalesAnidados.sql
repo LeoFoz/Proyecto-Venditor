@@ -4,9 +4,12 @@
 -- este a otro SP que también sea transaccional. (De dos niveles). Cada stored procedure debe afectar al
 -- menos a dos tablas. Demuestre en este SP el funcionamiento del commit y el rollback, para probarlo
 -- tan solo se invoca con valores correctos y con valores incorrectos
-drop procedure InsertIntoAdjudicated;
+drop procedure if exists InsertIntoAdjudicated;
+drop procedure if exists setStates;
+drop procedure if exists setAdjudicated;
+
 delimiter //
-create procedure  InsertIntoAdjudicated(
+create procedure InsertIntoAdjudicated(
     pInicieTran bool,
     pInterestId bigint,     
     pCurrency varchar(6)
@@ -157,4 +160,4 @@ BEGIN
 	-- definir handler
 
 end //
-call InsertIntoAdjudicated(false,1,'$$');
+-- call InsertIntoAdjudicated(false,1,'$$');

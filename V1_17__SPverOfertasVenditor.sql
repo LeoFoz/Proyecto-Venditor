@@ -3,6 +3,7 @@
 -- Fecha: 9/05/2021
 -- Descripcion: SP buscar quien quiere que venda las manzanas
 -- ______________________________
+drop procedure if exists verOfertasVenditor;
 delimiter //
 create procedure verOfertasVenditor(	
     pUserName varchar(60)
