@@ -20,7 +20,7 @@ BEGIN
     begin
      GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
      SET @message = CONCAT('Internal error: ',@message);  
-    -- select @message;
+     select @message;
     if(@InicieYo  = 1) then
 		rollback;
 	end if;   
@@ -81,7 +81,7 @@ BEGIN
     begin
      GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
       SET @message = CONCAT('Internal error: ',@message);  
-    -- select @message;
+     select @message;
      if(@InicieYo = 1) then
 	 	rollback;
 	end if;   
@@ -127,7 +127,7 @@ BEGIN
     begin
      GET DIAGNOSTICS CONDITION 1 @err_no = MYSQL_ERRNO, @message = MESSAGE_TEXT;
      SET @message = CONCAT('Internal error: ',@message);    
-    -- select @message;
+     select @message;
     if(@InicieYo = 1) then
 		rollback;
 	end if;   
@@ -160,5 +160,5 @@ BEGIN
 	-- definir handler
 
 end //
--- call InsertIntoAdjudicated(false,1,'$$');
--- call InsertIntoAdjudicated(false,1,'$$');
+ -- call InsertIntoAdjudicated(false,2,'$$');
+ 
