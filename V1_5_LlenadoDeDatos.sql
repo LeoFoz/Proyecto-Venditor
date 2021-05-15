@@ -239,3 +239,8 @@ VALUES (4,DATE(NOW()),1,1);
 INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
 VALUES (5,DATE(NOW()),1,1);
 
+-- llenado BlockedProducts 
+INSERT INTO BlockedProducts ( `Enabled` , `UserId` , `Productid`)
+VALUES (1,1,1);
+INSERT INTO BlockedProducts ( `Enabled` , `UserId` , `Productid`)
+VALUES (1,1,2);
