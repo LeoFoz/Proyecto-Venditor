@@ -50,7 +50,7 @@ BEGIN
     @pid,@com,pInterestId);
     
     -- llamada al otro SP   
-    -- call setStates(pInicieTran,pInterestid,pCurrency,@id,@bid,@com);
+    call setStates(pInicieTran,pInterestid,pCurrency,@id,@bid,@com);
     if(@InicieYo = 1) then
 		commit;    
 	end if;    
