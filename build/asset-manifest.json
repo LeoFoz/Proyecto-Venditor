@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Mirepo/static/css/main.184099ec.chunk.css",
+    "main.js": "/Mirepo/static/js/main.4d1f4cc3.chunk.js",
+    "main.js.map": "/Mirepo/static/js/main.4d1f4cc3.chunk.js.map",
+    "runtime-main.js": "/Mirepo/static/js/runtime-main.74741592.js",
+    "runtime-main.js.map": "/Mirepo/static/js/runtime-main.74741592.js.map",
+    "static/js/2.6e54ec0a.chunk.js": "/Mirepo/static/js/2.6e54ec0a.chunk.js",
+    "static/js/2.6e54ec0a.chunk.js.map": "/Mirepo/static/js/2.6e54ec0a.chunk.js.map",
+    "index.html": "/Mirepo/index.html",
+    "static/css/main.184099ec.chunk.css.map": "/Mirepo/static/css/main.184099ec.chunk.css.map",
+    "static/js/2.6e54ec0a.chunk.js.LICENSE.txt": "/Mirepo/static/js/2.6e54ec0a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74741592.js",
+    "static/js/2.6e54ec0a.chunk.js",
+    "static/css/main.184099ec.chunk.css",
+    "static/js/main.4d1f4cc3.chunk.js"
+  ]
+}
