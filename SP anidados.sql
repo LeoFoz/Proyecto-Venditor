@@ -33,7 +33,7 @@ BEGIN
     set @amount = 1000;
     select ComissionId into @com from Comissions where @amount < Comissions.Amount limit 1;       
     if(@amount >= 100) then 
-		set @com = 0.5;
+		set @com = 1;
 	end if;
    SELECT  PaymentStatusId into @pid from PaymentStatus where PaymentStatus.name = 'Pending';   
    select State into @stt from Biddings where BiddingId = @bid;
