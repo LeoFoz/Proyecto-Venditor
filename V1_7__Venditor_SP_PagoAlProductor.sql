@@ -91,10 +91,10 @@ BEGIN
 END$$
 DELIMITER ;
 
-call Venditor_SP_PagoAlProductor(1);
+-- call Venditor_SP_PagoAlProductor(1);
 
-select * from PaymentStatus;
-select * from PaymenttAttempts;
-select * from Transactions;
+-- select * from PaymentStatus;
+-- select * from PaymenttAttempts;
+-- select * from Transactions;
 
 

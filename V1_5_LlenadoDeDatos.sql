@@ -217,16 +217,42 @@ Origen:
 Año:
 ","12345");
 
+-- llenado BlockedSalers
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (2,DATE(NOW()),1,1);
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (3,DATE(NOW()),1,1);
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (4,DATE(NOW()),1,1);
+INSERT INTO BlockedSalers ( `BloquedUserRef` , `BlockedTime` , `Enabled` , `UserId`)
+VALUES (5,DATE(NOW()),1,1);
+
+-- llenado BlockedProducts 
+INSERT INTO BlockedProducts ( `Enabled` , `UserId` , `Productid`)
+VALUES (1,1,1);
+INSERT INTO BlockedProducts ( `Enabled` , `UserId` , `Productid`)
+VALUES (1,1,2);
+
+-- llenado UserSales 
+insert into UserSalesxCategory values(1,1,1,5 );
+insert into UserSalesxCategory values(2,1,3,2 );
+insert into UserSalesxCategory values(3,1,2,1 );
+insert into UserSalesxCategory values(4,34,3,4);
+
 -- llenado comission
 INSERT INTO Comissions (Amount,Comission)
 VALUES (1,1);
 
 -- llenado biddings 
 INSERT INTO Biddings (`BiddingId` , `MinimalPrice` , `ComissonXSale` , `posttime`, `Description` , `State` , `UserId`)
-VALUES (1,10,2,DATE(NOW()), 'Manzana roja',1,1);
-   
+VALUES (1,10,2,DATE(NOW()), 'Manzana roja',0,1);
+Insert into Biddings values(2,800,3,Now(),'Los mejores juegos',0,6);
+Insert into Biddings values(3,1200,2,Now(),'Cervezas artesanales',0,1);
+Insert into Biddings values(4,820,1,Now(),'Camión',0,8);
+Insert into Biddings values(5,120000,3,Now(),'Televisor OLED',0,10);
+
 -- llenado interest
 INSERT INTO Interests (`InterestId` , `Posttime` , `Agree` , `ChangeDeal` , `NewComission` , `LastPrice` , `UserId` , `BiddingId` )
 VALUES (1,DATE(NOW()),1,0,2,10,2,1);
-
-
+Insert into Interests values(2,Now(),1,0,2,810,2,4);
+Insert into Interests values(3,Now(),1,1,2,1190,3,3);
